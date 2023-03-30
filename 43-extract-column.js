@@ -13,3 +13,22 @@
 /* Expected output
 [120, 115, 123, 112, 122]
  */
+
+function getColumn(array, index) {
+  let result = [];
+  for (let i = 0; i < array.length; i++) {
+    result.push(array[i][index]);
+  }
+  return result;
+}
+
+let array = [
+  ["John", 120],
+  ["Jane", 115],
+  ["Thomas", 123],
+  ["Mel", 112],
+  ["Charley", 122],
+];
+
+let column = getColumn(array, 1);
+console.log(column);

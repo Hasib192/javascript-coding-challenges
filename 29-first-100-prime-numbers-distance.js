@@ -103,3 +103,30 @@
 2        523  -  521
 18       541  -  523
  */
+
+function isPrime(n2) {
+  if (n2 < 2) return false;
+  for (let i = 2; i <= Math.sqrt(n2); i++) {
+    if (n2 % i == 0) return false;
+  }
+  return true;
+}
+
+let n = 0;
+let i = 2;
+let primes = [];
+
+while (n != 100) {
+  if (isPrime(i)) {
+    primes.push(i);
+    n++;
+  }
+  i++;
+}
+
+// No need to print the distance between the last 101th & 100th prime number
+for (let i = 0; i < primes.length - 1; i++) {
+  let currentPrime = primes[i];
+  let nextPrime = primes[i + 1];
+  console.log(`${nextPrime - currentPrime}\t${nextPrime}  -  ${currentPrime}`);
+}

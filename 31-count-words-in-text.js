@@ -18,3 +18,38 @@
 8
 0
  */
+
+function countText(str) {
+  str = str.trim().toLowerCase();
+
+  if (str.length == 0) return 0;
+
+  let wordCount = 0;
+  let isWord = false;
+
+  for (let i = 0; i < str.length; i++) {
+    let char = str[i];
+
+    if (char >= "a" && char <= "z") {
+      isWord = true;
+    } else if (isWord) {
+      wordCount++;
+      isWord = false;
+    }
+  }
+
+  // Also check the last word
+  if (isWord) {
+    wordCount++;
+  }
+
+  return wordCount;
+}
+
+console.log(countText(""));
+console.log(countText("            "));
+console.log(countText("JavaScript!!!   "));
+console.log(countText("     JavaScript"));
+console.log(countText("    JavaScript is cool      "));
+console.log(countText("I like to learn JavaScript with Lead Educare"));
+console.log(countText("@@@ !!!"));

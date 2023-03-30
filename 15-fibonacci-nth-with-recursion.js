@@ -5,3 +5,13 @@
 /* Expected output
 55
  */
+
+function findNthFibonacci(n) {
+  if (n <= 1) {
+    return n;
+  }
+
+  return findNthFibonacci(n - 1) + findNthFibonacci(n - 2);
+}
+
+console.log(findNthFibonacci(10));

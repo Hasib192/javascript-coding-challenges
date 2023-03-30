@@ -5,3 +5,9 @@
 /* Expected output
 20
  */
+
+function fahrenheitToCelsius(f) {
+  return ((f - 32) * 5) / 9;
+}
+
+console.log(fahrenheitToCelsius(68));
